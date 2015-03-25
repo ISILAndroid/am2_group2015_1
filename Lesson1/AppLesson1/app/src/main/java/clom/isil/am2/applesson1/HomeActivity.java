@@ -12,18 +12,33 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 
+import clom.isil.am2.applesson1.view.fragments.FourFragment;
+import clom.isil.am2.applesson1.view.fragments.OneFragment;
+import clom.isil.am2.applesson1.view.fragments.ThreeFragment;
+import clom.isil.am2.applesson1.view.fragments.TwoFragment;
+import clom.isil.am2.applesson1.view.listener.OnFragmentListener;
 
-public class HomeActivity extends ActionBarActivity {
+
+public class HomeActivity extends ActionBarActivity implements OnFragmentListener{
+
+    private OneFragment oneFragment= OneFragment.newInstance(null,null);
+    private TwoFragment twoFragment= TwoFragment.newInstance(null,null);
+    private ThreeFragment threeFragment= ThreeFragment.newInstance(null,null);
+    private FourFragment fourFragment= FourFragment.newInstance(null,null);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        if (savedInstanceState == null) {
+        /* (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
-        }
+        }*/
+        //changeFragment(null,oneFragment,"oneFragment");
+        //changeFragment(null,twoFragment,"twoFragment");
+        //changeFragment(null,threeFragment,"threeFragment");
+        changeFragment(null,fourFragment,"fourFragment");
     }
 
 
@@ -47,6 +62,11 @@ public class HomeActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void exitApp() {
+
     }
 
     /**

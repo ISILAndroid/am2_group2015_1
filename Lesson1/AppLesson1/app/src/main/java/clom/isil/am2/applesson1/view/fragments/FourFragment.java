@@ -1,9 +1,7 @@
 package clom.isil.am2.applesson1.view.fragments;
 
 import android.app.Activity;
-import android.net.Uri;
 import android.os.Bundle;
-//import android.app.Fragment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,15 +10,17 @@ import android.view.ViewGroup;
 import clom.isil.am2.applesson1.R;
 import clom.isil.am2.applesson1.view.listener.OnFragmentListener;
 
+//import android.app.Fragment;
+
 /**
- * A simple {@link Fragment} subclass.
+ * A simple {@link android.support.v4.app.Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link TwoFragment.} interface
+ * {@link clom.isil.am2.applesson1.view.fragments.FourFragment.} interface
  * to handle interaction events.
- * Use the {@link TwoFragment#newInstance} factory method to
+ * Use the {@link clom.isil.am2.applesson1.view.fragments.FourFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TwoFragment extends Fragment {
+public class FourFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -38,11 +38,11 @@ public class TwoFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment TwoFragment.
+     * @return A new instance of fragment OneFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static TwoFragment newInstance(String param1, String param2) {
-        TwoFragment fragment = new TwoFragment();
+    public static FourFragment newInstance(String param1, String param2) {
+        FourFragment fragment = new FourFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -50,7 +50,7 @@ public class TwoFragment extends Fragment {
         return fragment;
     }
 
-    public TwoFragment() {
+    public FourFragment() {
         // Required empty public constructor
     }
 
@@ -67,7 +67,7 @@ public class TwoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_two, container, false);
+        return inflater.inflate(R.layout.fragment_four, container, false);
     }
 
 
