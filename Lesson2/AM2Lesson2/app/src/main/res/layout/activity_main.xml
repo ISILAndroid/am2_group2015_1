@@ -42,7 +42,7 @@
 
         <FrameLayout
             android:id="@+id/fraLay4"
-            android:background="#ff00ff"
+            android:background="#00ff00"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="fill_parent"></FrameLayout>

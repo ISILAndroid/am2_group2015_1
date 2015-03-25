@@ -11,9 +11,10 @@ import com.isil.am2.am2lesson2.view.fragments.FourFragment;
 import com.isil.am2.am2lesson2.view.fragments.OneFragment;
 import com.isil.am2.am2lesson2.view.fragments.ThreeFragment;
 import com.isil.am2.am2lesson2.view.fragments.TwoFragment;
+import com.isil.am2.am2lesson2.view.listener.OnFragmentListener;
 
 
-public class DetailActivity extends ActionBarActivity {
+public class DetailActivity extends ActionBarActivity implements OnFragmentListener {
 
     private OneFragment oneFragment= OneFragment.newInstance(null,null);
     private TwoFragment twoFragment= TwoFragment.newInstance(null,null);
@@ -101,6 +102,11 @@ public class DetailActivity extends ActionBarActivity {
         {
             fragmentManager.beginTransaction().replace(R.id.container, fragment,fragName).commit();
         }
+
+    }
+
+    @Override
+    public void exitApp() {
 
     }
 }
