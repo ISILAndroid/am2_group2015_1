@@ -19,7 +19,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        arrFraLay=new ArrayList<>();
+        arrFraLay=new ArrayList<View>();
         arrFraLay.add(findViewById(R.id.fraLay1));
         arrFraLay.add(findViewById(R.id.fraLay2));
         arrFraLay.add(findViewById(R.id.fraLay3));
