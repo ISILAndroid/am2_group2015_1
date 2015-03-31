@@ -15,6 +15,7 @@ import com.isil.am2lesson3.view.fragments.AFragment;
 import com.isil.am2lesson3.view.fragments.BFragment;
 import com.isil.am2lesson3.view.fragments.CFragment;
 import com.isil.am2lesson3.view.listener.OnFragmentListener;
+import com.isil.am2lesson3.view.transforms.DepthPageTransformer;
 import com.isil.am2lesson3.view.transforms.ZoomOutPageTransformer;
 
 public class MyViewPagerActivity extends ActionBarActivity implements OnFragmentListener {
@@ -41,7 +42,8 @@ public class MyViewPagerActivity extends ActionBarActivity implements OnFragment
         setContentView(R.layout.activity_my_view_pager);
 
         mPager = (ViewPager) findViewById(R.id.pager);
-        mPager.setPageTransformer(true, new ZoomOutPageTransformer());
+        //mPager.setPageTransformer(true, new ZoomOutPageTransformer());
+        mPager.setPageTransformer(true, new DepthPageTransformer());
         mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
 
