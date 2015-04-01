@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -111,7 +112,9 @@ public class BoxFragment extends Fragment {
 
     public  void selectedColor(int pos)
     {
+        Log.v("CONSOLE", "selected color " + pos);
         getView().setBackgroundColor(Color.parseColor("#ff00ff"));
+        //getView().setBackgroundColor();
     }
 
 }

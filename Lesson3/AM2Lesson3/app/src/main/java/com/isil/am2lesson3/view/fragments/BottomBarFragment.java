@@ -120,20 +120,20 @@ public class BottomBarFragment extends Fragment {
         flay1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                mListener.colorSelected(0);
             }
         });
         flay2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                mListener.colorSelected(0);
             }
         });
 
         flay3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                mListener.colorSelected(0);
             }
         });
     }
