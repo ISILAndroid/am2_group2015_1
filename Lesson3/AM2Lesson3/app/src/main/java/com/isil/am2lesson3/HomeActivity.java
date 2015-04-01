@@ -50,6 +50,11 @@ public class HomeActivity extends ActionBarActivity implements OnFragmentListene
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void gotoAction(Object obj) {
+
+    }
+
     /**
      * A placeholder fragment containing a simple view.
      */
