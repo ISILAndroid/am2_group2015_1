@@ -17,5 +17,6 @@
     </string-array>
 
     <string name="title_activity_my_view_pager">MyViewPagerActivity</string>
+    <string name="title_activity_button">ButtonActivity</string>
 
 </resources>
