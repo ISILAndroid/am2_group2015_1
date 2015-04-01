@@ -23,16 +23,12 @@ public class MyTabActivity extends ActionBarActivity implements OnFragmentListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_tab);
 
-        /** Getting a reference to action bar of this activity */
         mActionbar = getSupportActionBar();
 
-        /** Set tab navigation mode */
         mActionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-        /** Getting a reference to ViewPager from the layout */
         mPager = (ViewPager) findViewById(R.id.pager);
 
-        /** Getting a reference to FragmentManager */
         FragmentManager fm = getSupportFragmentManager();
 
         ViewPager.SimpleOnPageChangeListener pageChangeListener = new ViewPager.SimpleOnPageChangeListener(){
@@ -46,15 +42,12 @@ public class MyTabActivity extends ActionBarActivity implements OnFragmentListen
 
         mPager.setOnPageChangeListener(pageChangeListener);
 
-        /** Creating an instance of FragmentPagerAdapter */
         TabsFragmentPagerAdapter fragmentPagerAdapter = new TabsFragmentPagerAdapter(fm);
 
-        /** Setting the FragmentPagerAdapter object to the viewPager object */
         mPager.setAdapter(fragmentPagerAdapter);
 
         mActionbar.setDisplayShowTitleEnabled(true);
 
-        /** Defining tab listener */
         ActionBar.TabListener tabListener = new ActionBar.TabListener() {
 
             @Override
@@ -72,14 +65,12 @@ public class MyTabActivity extends ActionBarActivity implements OnFragmentListen
             }
         };
 
-        /** Creating fragment1 Tab */
         ActionBar.Tab tab = mActionbar.newTab()
                 .setText("Tab1")
                 .setTabListener(tabListener);
 
         mActionbar.addTab(tab);
 
-        /** Creating fragment2 Tab */
         tab = mActionbar.newTab()
                 .setText("Tab2")
                 .setTabListener(tabListener);
@@ -99,7 +90,7 @@ public class MyTabActivity extends ActionBarActivity implements OnFragmentListen
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_my_tab, menu);
-        return true;
+        return false;
     }
 
     @Override
@@ -114,6 +105,11 @@ public class MyTabActivity extends ActionBarActivity implements OnFragmentListen
             return true;
         }
 
-        return super.onOptionsItemSelected(item);
+        return false;
+    }
+
+    @Override
+    public void gotoAction(Object obj) {
+
     }
 }

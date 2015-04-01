@@ -40,7 +40,7 @@ public class NavigationDrawerActivity extends ActionBarActivity implements OnFra
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_drawer);
 
-        //setListView();
+
         mTitle = mDrawerTitle = getTitle();
         mPlanetTitles = getResources().getStringArray(R.array.planets_array);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -107,6 +107,11 @@ public class NavigationDrawerActivity extends ActionBarActivity implements OnFra
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void gotoAction(Object obj) {
+
     }
 
     /* The click listner for ListView in the navigation drawer */

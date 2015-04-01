@@ -20,20 +20,10 @@ import com.isil.am2lesson3.view.transforms.ZoomOutPageTransformer;
 
 public class MyViewPagerActivity extends ActionBarActivity implements OnFragmentListener {
 
-    /**
-     * The number of pages (wizard steps) to show in this demo.
-     */
     private static final int NUM_PAGES = 3;
 
-    /**
-     * The pager widget, which handles animation and allows swiping horizontally to access previous
-     * and next wizard steps.
-     */
     private ViewPager mPager;
 
-    /**
-     * The pager adapter, which provides the pages to the view pager widget.
-     */
     private PagerAdapter mPagerAdapter;
 
     @Override
@@ -52,9 +42,8 @@ public class MyViewPagerActivity extends ActionBarActivity implements OnFragment
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_my_view_pager, menu);
-        return true;
+
+        return false;
     }
 
     @Override
@@ -69,19 +58,22 @@ public class MyViewPagerActivity extends ActionBarActivity implements OnFragment
             return true;
         }
 
-        return super.onOptionsItemSelected(item);
+        return false;
     }
     @Override
     public void onBackPressed() {
         if (mPager.getCurrentItem() == 0) {
-            // If the user is currently looking at the first step, allow the system to handle the
-            // Back button. This calls finish() on this activity and pops the back stack.
             super.onBackPressed();
         } else {
-            // Otherwise, select the previous step.
             mPager.setCurrentItem(mPager.getCurrentItem() - 1);
         }
     }
+
+    @Override
+    public void gotoAction(Object obj) {
+
+    }
+
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
         public ScreenSlidePagerAdapter(FragmentManager fm) {
             super(fm);
@@ -93,12 +85,10 @@ public class MyViewPagerActivity extends ActionBarActivity implements OnFragment
             Bundle data = new Bundle();
             switch(position){
 
-                /** tab1 is selected */
                 case 0:
                     AFragment fragment1 =AFragment.newInstance(null,null);
                     return fragment1;
 
-                /** tab2 is selected */
                 case 1:
                     BFragment fragment2 =BFragment.newInstance(null,null);
                     return fragment2;

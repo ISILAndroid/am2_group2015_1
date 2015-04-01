@@ -14,7 +14,7 @@ import com.isil.am2lesson3.view.listener.OnFragmentListener;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link BFragment.OnFragmentInteractionListener} interface
+ *  interface
  * to handle interaction events.
  * Use the {@link BFragment#newInstance} factory method to
  * create an instance of this fragment.
@@ -103,9 +103,5 @@ public class BFragment extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        public void onFragmentInteraction(Uri uri);
-    }
 
 }
