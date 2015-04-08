@@ -39,6 +39,7 @@ public class ContactFragment extends Fragment {
 
     private OnHomeListener mListener;
     private ListView lviContact;
+    private View header;
 
     /**
      * Use this factory method to create a new instance of
@@ -111,6 +112,7 @@ public class ContactFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         lviContact= (ListView)getView().findViewById(R.id.lviContact);
+        header= getView().findViewById(R.id.header);
 
         List<ContactEntity> data = new ArrayList<ContactEntity>();
 
@@ -120,5 +122,12 @@ public class ContactFragment extends Fragment {
 
         ContactAdapter contactAdapter= new ContactAdapter(getActivity(),data);
         lviContact.setAdapter(contactAdapter);
+
+        header.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO agregar nuevo contacto
+            }
+        });
     }
 }
