@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.isil.am2.am2examplesqlite.R;
 import com.isil.am2.am2examplesqlite.model.entity.ContactEntity;
 
 import java.util.List;
@@ -44,7 +45,26 @@ public class ContactAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        return null;
+        View v = view;
+        ViewHolder viewHolder;
+        if (view == null) {
+            v = mLayoutInflater.inflate(R.layout.row_contact, null);
+            viewHolder = new ViewHolder();
+            viewHolder.iviContact= (ImageView)v.findViewById(R.id.iviContact);
+            viewHolder.tviName= (TextView)v.findViewById(R.id.tviName);
+            viewHolder.tviPhone= (TextView)v.findViewById(R.id.tviPhone);
+            v.setTag(viewHolder);
+        } else {
+            viewHolder = (ViewHolder) v.getTag();
+        }
+        final ContactEntity contactEntity= data.get(i);
+        if(contactEntity!=null) {
+
+            viewHolder.tviName.setText(contactEntity.getName());
+            viewHolder.tviPhone.setText(contactEntity.getPhone_number());
+        }
+
+        return v;
     }
 
     public class ViewHolder
