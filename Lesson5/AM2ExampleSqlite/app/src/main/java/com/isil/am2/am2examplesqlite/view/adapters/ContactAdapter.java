@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.isil.am2.am2examplesqlite.model.entity.ContactEntity;
 
@@ -19,11 +21,10 @@ public class ContactAdapter extends BaseAdapter {
     private List<ContactEntity> data;
     private LayoutInflater mLayoutInflater = null;
 
-    public ContactAdapter(Context context, List<ContactEntity> data)
-    {
+    public ContactAdapter(Context context, List<ContactEntity> data) {
         this.context = context;
         this.data = data;
-        mLayoutInflater= LayoutInflater.from(context);
+        mLayoutInflater = LayoutInflater.from(context);
     }
 
     @Override
@@ -44,5 +45,12 @@ public class ContactAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         return null;
+    }
+
+    public class ViewHolder
+    {
+        public ImageView iviContact;
+        public TextView tviName;
+        public TextView tviPhone;
     }
 }
