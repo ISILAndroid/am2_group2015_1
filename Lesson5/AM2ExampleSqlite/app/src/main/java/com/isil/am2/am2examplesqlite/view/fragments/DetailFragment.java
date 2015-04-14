@@ -8,27 +8,23 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.isil.am2.am2examplesqlite.R;
 import com.isil.am2.am2examplesqlite.model.entity.ContactEntity;
-import com.isil.am2.am2examplesqlite.storage.db.CRUDOperations;
-import com.isil.am2.am2examplesqlite.storage.db.MyDatabase;
-import com.isil.am2.am2examplesqlite.view.adapters.ContactAdapter;
 import com.isil.am2.am2examplesqlite.view.listeners.OnHomeListener;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
  * to handle interaction events.
- * Use the {@link ContactFragment#newInstance} factory method to
+ * Use the {@link DetailFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ContactFragment extends Fragment {
+public class DetailFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -39,8 +35,13 @@ public class ContactFragment extends Fragment {
     private String mParam2;
 
     private OnHomeListener mListener;
-    private ListView lviContact;
-    private View header;
+
+    private ImageView iviUser;
+    private EditText eteNombre,eteEmail,etePhone;
+    private Button btnEdit, btnDelete;
+    private LinearLayout llayBack;
+
+    private ContactEntity contactEntity;
 
     /**
      * Use this factory method to create a new instance of
@@ -48,11 +49,11 @@ public class ContactFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ContactFragment.
+     * @return A new instance of fragment DetailFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ContactFragment newInstance(String param1, String param2) {
-        ContactFragment fragment = new ContactFragment();
+    public static DetailFragment newInstance(String param1, String param2) {
+        DetailFragment fragment = new DetailFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -60,7 +61,7 @@ public class ContactFragment extends Fragment {
         return fragment;
     }
 
-    public ContactFragment() {
+    public DetailFragment() {
         // Required empty public constructor
     }
 
@@ -77,10 +78,10 @@ public class ContactFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contact, container, false);
+        return inflater.inflate(R.layout.fragment_detail, container, false);
     }
 
-
+    // TODO: Rename method, update argument and hook method into UI event
 
     @Override
     public void onAttach(Activity activity) {
@@ -109,36 +110,32 @@ public class ContactFragment extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
+
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+    public void onActivityCreated(@Nullable Bundle savedInstanceState)
+    {
         super.onActivityCreated(savedInstanceState);
-        lviContact= (ListView)getView().findViewById(R.id.lviContact);
-        header= getView().findViewById(R.id.header);
+        iviUser= (ImageView)getView().findViewById(R.id.iviUser);
 
-        List<ContactEntity> data = new ArrayList<ContactEntity>();
+        eteNombre= (EditText)getView().findViewById(R.id.eteNombre);
+        eteEmail= (EditText)getView().findViewById(R.id.eteEmail);
+        etePhone= (EditText)getView().findViewById(R.id.etePhone);
+        btnEdit= (Button)getView().findViewById(R.id.btnEdit);
+        btnDelete= (Button)getView().findViewById(R.id.btnRemove);
+        llayBack= (LinearLayout)getView().findViewById(R.id.llayBack);
 
-        MyDatabase db = new MyDatabase(getActivity());
-        CRUDOperations crud = new CRUDOperations(db);
-        data = crud.getAllContacts();
-
-        ContactAdapter contactAdapter= new ContactAdapter(getActivity(),data);
-        lviContact.setAdapter(contactAdapter);
-
-        header.setOnClickListener(new View.OnClickListener() {
+        llayBack.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
-                //TODO agregar nuevo contacto
-                mListener.addContact(null);
+            public void onClick(View view) {
+                mListener.listContacts();
             }
         });
 
-        lviContact.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                ContactEntity entity= (ContactEntity)adapterView.getAdapter().getItem(i);
-                mListener.selectedContact(entity);
-            }
-        });
+        populate();
+    }
+
+    private void populate() {
+
+        contactEntity= (ContactEntity)getArguments().getSerializable("ENTITY");
     }
 }
