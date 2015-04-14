@@ -33,11 +33,23 @@
             android:name=".HomeActivity1"
             android:label="@string/title_activity_home_activity1"
             android:screenOrientation="landscape">
+
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
         </activity>
         <activity
             android:name=".HomeActivity2"
             android:label="@string/title_activity_home_activity2"
             android:screenOrientation="landscape">
+
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
         </activity>
     </application>
 
