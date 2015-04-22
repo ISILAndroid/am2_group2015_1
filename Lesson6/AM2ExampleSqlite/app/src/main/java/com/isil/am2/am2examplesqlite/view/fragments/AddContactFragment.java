@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.isil.am2.am2examplesqlite.R;
 import com.isil.am2.am2examplesqlite.model.entity.ContactEntity;
@@ -40,6 +41,7 @@ public class AddContactFragment extends Fragment {
     private ImageView iviUser;
     private EditText eteNombre,eteEmail,etePhone;
     private Button btnAdd;
+    private LinearLayout llayBack;
 
     private ContactEntity contactEntity;
 
@@ -121,7 +123,14 @@ public class AddContactFragment extends Fragment {
         eteNombre= (EditText)getView().findViewById(R.id.eteNombre);
         eteEmail= (EditText)getView().findViewById(R.id.eteEmail);
         etePhone= (EditText)getView().findViewById(R.id.etePhone);
-        btnAdd= (Button)getView().findViewById(R.id.btnAdd);
+
+
+        llayBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.listContacts();
+            }
+        });
 
         //events
         btnAdd.setOnClickListener( new View.OnClickListener() {
