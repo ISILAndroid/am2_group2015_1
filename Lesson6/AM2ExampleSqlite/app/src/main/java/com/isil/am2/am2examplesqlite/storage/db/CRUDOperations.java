@@ -77,12 +77,14 @@ public class CRUDOperations {
 	
 	public int getContactsCount()
 	{
+        int count=0;
 		String sql= "SELECT * FROM "+MyDatabase.TABLE_CONTACTS;
 		SQLiteDatabase db = helper.getReadableDatabase();
 		Cursor cursor = db.rawQuery(sql, null);
+        count=cursor.getCount();
 		cursor.close();
 		
-		return cursor.getCount();
+		return count;
 	}
 	
 	//--------------------------------------------

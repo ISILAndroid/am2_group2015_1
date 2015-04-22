@@ -44,6 +44,8 @@ public class AddContactFragment extends Fragment {
     private LinearLayout llayBack;
 
     private ContactEntity contactEntity;
+    private CRUDOperations crud;
+    private int total=0;
 
     /**
      * Use this factory method to create a new instance of
@@ -126,6 +128,9 @@ public class AddContactFragment extends Fragment {
         llayBack= (LinearLayout)getView().findViewById(R.id.llayBack);
         btnAdd= (Button)getView().findViewById(R.id.btnAdd);
 
+        MyDatabase db = new MyDatabase(getActivity());
+        crud = new CRUDOperations(db);
+        total=crud.getContactsCount()+1;
 
         llayBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -173,7 +178,7 @@ public class AddContactFragment extends Fragment {
         eteEmail.setError(null);
         etePhone.setError(null);
 
-        contactEntity= new ContactEntity(100,name,email,phone);
+        contactEntity= new ContactEntity(total,name,email,phone);
 
         Log.v("CONSOLE", " ContactEntity " + contactEntity.toString());
 
@@ -182,8 +187,7 @@ public class AddContactFragment extends Fragment {
 
     private void addContact()
     {
-        MyDatabase db = new MyDatabase(getActivity());
-        CRUDOperations crud = new CRUDOperations(db);
+
         crud.addContact(contactEntity);
 
         mListener.listContacts();

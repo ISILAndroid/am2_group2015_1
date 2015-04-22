@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -197,12 +198,14 @@ public class DetailFragment extends Fragment implements OnCustomDialogListener{
     }
 
     private void showDeleteDialog() {
-        CustomDialog.buildSimpleDialog(getActivity(),this,"Mensaje","¿Deseas eliminar este contacto?",null).show();
+        CustomDialog.buildSimpleDialog(getActivity(),this,"Mensaje",
+                "¿Deseas eliminar este contacto?",null).show();
     }
 
     private void populate() {
 
         contactEntity= (ContactEntity)getArguments().getSerializable("ENTITY");
+        Log.v("CONTACT", "populate " + contactEntity.toString());
         if(contactEntity!=null)
         {
             eteNombre.setText(contactEntity.getName());

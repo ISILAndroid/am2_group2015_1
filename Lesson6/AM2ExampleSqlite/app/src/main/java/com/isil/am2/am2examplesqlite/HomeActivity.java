@@ -51,11 +51,11 @@ public class HomeActivity extends ActionBarActivity implements OnHomeListener {
                 break;
 
             case ADD_CONTACT:
-                fragment=addContactFragment;
+                fragment=AddContactFragment.newInstance(null,null);
                 break;
 
             case DETAIL_CONTACT:
-                fragment=detailFragment;
+                fragment= DetailFragment.newInstance(null,null);
                 break;
         }
 
