@@ -123,6 +123,7 @@ public class AddContactFragment extends Fragment {
         eteNombre= (EditText)getView().findViewById(R.id.eteNombre);
         eteEmail= (EditText)getView().findViewById(R.id.eteEmail);
         etePhone= (EditText)getView().findViewById(R.id.etePhone);
+        llayBack= (LinearLayout)getView().findViewById(R.id.llayBack);
 
 
         llayBack.setOnClickListener(new View.OnClickListener() {
