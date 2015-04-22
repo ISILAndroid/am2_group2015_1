@@ -193,6 +193,7 @@ public class DetailFragment extends Fragment implements OnCustomDialogListener{
 
     private void editUser() {
         crud.updateContact(editContactEntity);
+        mListener.listContacts();
     }
 
     private void showDeleteDialog() {
