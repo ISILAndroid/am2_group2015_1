@@ -46,6 +46,7 @@ public class DetailFragment extends Fragment implements OnCustomDialogListener{
     private LinearLayout llayBack;
 
     private ContactEntity contactEntity;
+    private ContactEntity editContactEntity;
     private  CRUDOperations crud;
 
     /**
@@ -147,19 +148,54 @@ public class DetailFragment extends Fragment implements OnCustomDialogListener{
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if(validateForm())  editUser();
             }
         });
 
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDeleteDeialog();
+                showDeleteDialog();
             }
         });
     }
 
-    private void showDeleteDeialog() {
+    private boolean validateForm() {
+
+        String name= eteNombre.getText().toString().trim();
+        String email= eteEmail.getText().toString().trim();
+        String phone= etePhone.getText().toString().trim();
+
+        if(name.isEmpty())
+        {
+            eteNombre.setError("Nombre inválido");
+            return false;
+        }
+        if(email.isEmpty())
+        {
+            eteEmail.setError("Email inválido");
+            return false;
+        }
+        if(phone.isEmpty())
+        {
+            etePhone.setError("Teléfono inválido");
+            return false;
+        }
+
+        eteNombre.setError(null);
+        eteEmail.setError(null);
+        etePhone.setError(null);
+
+        int id= contactEntity.getId();
+        editContactEntity= new ContactEntity(id,name,email,phone);
+        return true;
+    }
+
+    private void editUser() {
+        crud.updateContact(editContactEntity);
+    }
+
+    private void showDeleteDialog() {
         CustomDialog.buildSimpleDialog(getActivity(),this,"Mensaje","¿Deseas eliminar este contacto?",null).show();
     }
 
