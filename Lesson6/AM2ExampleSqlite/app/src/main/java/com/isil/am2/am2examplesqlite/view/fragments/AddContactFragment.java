@@ -124,6 +124,7 @@ public class AddContactFragment extends Fragment {
         eteEmail= (EditText)getView().findViewById(R.id.eteEmail);
         etePhone= (EditText)getView().findViewById(R.id.etePhone);
         llayBack= (LinearLayout)getView().findViewById(R.id.llayBack);
+        btnAdd= (Button)getView().findViewById(R.id.btnAdd);
 
 
         llayBack.setOnClickListener(new View.OnClickListener() {
