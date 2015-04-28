@@ -1,13 +1,12 @@
-package com.example.templateappandroid.db;
+package com.example.templateappandroid.storage.db;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.example.templateappandroid.entity.ContactEntity;
+import com.example.templateappandroid.model.entity.ContactEntity;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.RuntimeExceptionDao;

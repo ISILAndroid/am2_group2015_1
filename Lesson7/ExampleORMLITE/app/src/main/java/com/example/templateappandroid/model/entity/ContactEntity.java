@@ -1,4 +1,4 @@
-package com.example.templateappandroid.entity;
+package com.example.templateappandroid.model.entity;
 
 import java.io.Serializable;
 
@@ -23,6 +23,9 @@ public class ContactEntity implements Serializable {
 	
 	@DatabaseField
 	private String job;
+
+    @DatabaseField
+	private String phone;
 	
 	@DatabaseField
 	private int contacted; //0 - 1 contacted - not contacted
@@ -40,6 +43,15 @@ public class ContactEntity implements Serializable {
 		this.path_img = path_img;
 		this.job = job;
 	}
+
+    public ContactEntity(String name, String email,
+                         String phone)
+    {
+        super();
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+    }
 
 	public ContactEntity(int id, String name, String lastname, String email,
 			String job) {
@@ -103,7 +115,27 @@ public class ContactEntity implements Serializable {
 	public void setContacted(int contacted) {
 		this.contacted = contacted;
 	}
-	
-	
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "ContactEntity{" +
+                "id=" + id +
+                ", facebook_id=" + facebook_id +
+                ", name='" + name + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", email='" + email + '\'' +
+                ", path_img='" + path_img + '\'' +
+                ", job='" + job + '\'' +
+                ", phone='" + phone + '\'' +
+                ", contacted=" + contacted +
+                '}';
+    }
 }
