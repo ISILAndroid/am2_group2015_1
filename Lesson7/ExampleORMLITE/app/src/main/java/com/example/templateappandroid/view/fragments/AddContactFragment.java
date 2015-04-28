@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 
 import com.example.templateappandroid.R;
 import com.example.templateappandroid.model.entity.ContactEntity;
+import com.example.templateappandroid.storage.db.DatabaseHelper;
 import com.example.templateappandroid.view.listeners.OnHomeListener;
 
 
@@ -45,6 +46,7 @@ public class AddContactFragment extends Fragment {
     private ContactEntity contactEntity;
     //private CRUDOperations crud;
     private int total=0;
+    private DatabaseHelper mhelper;
 
     /**
      * Use this factory method to create a new instance of
@@ -127,9 +129,11 @@ public class AddContactFragment extends Fragment {
         llayBack= (LinearLayout)getView().findViewById(R.id.llayBack);
         btnAdd= (Button)getView().findViewById(R.id.btnAdd);
 
+        mhelper=new DatabaseHelper(getActivity());
+
         /*MyDatabase db = new MyDatabase(getActivity());
         crud = new CRUDOperations(db);
-        total=crud.getContactsCount()+1;
+        total=crud.getContactsCount()+1;*/
 
         llayBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,7 +151,7 @@ public class AddContactFragment extends Fragment {
                     addContact();
                 }
             }
-        });*/
+        });
 
 
     }
@@ -188,7 +192,7 @@ public class AddContactFragment extends Fragment {
     {
 
         //crud.addContact(contactEntity);
-
+        mhelper.addContactData(contactEntity);
         mListener.listContacts();
     }
 }
