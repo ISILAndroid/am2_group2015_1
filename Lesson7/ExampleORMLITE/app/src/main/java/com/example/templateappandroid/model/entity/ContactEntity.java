@@ -53,6 +53,16 @@ public class ContactEntity implements Serializable {
         this.phone = phone;
     }
 
+    public ContactEntity(int id,String name, String email,
+                         String phone)
+    {
+        super();
+        this.id= id;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+    }
+
 	public ContactEntity(int id, String name, String lastname, String email,
 			String job) {
 		super();
@@ -122,6 +132,15 @@ public class ContactEntity implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     @Override

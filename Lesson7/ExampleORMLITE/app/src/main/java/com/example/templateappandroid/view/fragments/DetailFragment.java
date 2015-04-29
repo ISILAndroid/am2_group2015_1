@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 
 import com.example.templateappandroid.R;
 import com.example.templateappandroid.model.entity.ContactEntity;
+import com.example.templateappandroid.storage.db.DatabaseHelper;
 import com.example.templateappandroid.view.dialogs.CustomDialog;
 import com.example.templateappandroid.view.dialogs.OnCustomDialogListener;
 import com.example.templateappandroid.view.listeners.OnHomeListener;
@@ -47,6 +48,8 @@ public class DetailFragment extends Fragment implements OnCustomDialogListener{
 
     private ContactEntity contactEntity;
     private ContactEntity editContactEntity;
+
+    private DatabaseHelper mhelper;
     //private  CRUDOperations crud;
 
     /**
@@ -129,6 +132,7 @@ public class DetailFragment extends Fragment implements OnCustomDialogListener{
         btnEdit= (Button)getView().findViewById(R.id.btnEdit);
         btnDelete= (Button)getView().findViewById(R.id.btnRemove);
         llayBack= (LinearLayout)getView().findViewById(R.id.llayBack);
+        mhelper=new DatabaseHelper(getActivity());
 
         llayBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -187,12 +191,13 @@ public class DetailFragment extends Fragment implements OnCustomDialogListener{
         etePhone.setError(null);
 
         int id= contactEntity.getId();
-        editContactEntity= new ContactEntity(name,email,phone);
+        editContactEntity= new ContactEntity(id,name,email,phone);
         return true;
     }
 
     private void editUser() {
         //crud.updateContact(editContactEntity);
+        mhelper.updateContact(editContactEntity);
         mListener.listContacts();
     }
 
@@ -209,7 +214,7 @@ public class DetailFragment extends Fragment implements OnCustomDialogListener{
         {
             eteNombre.setText(contactEntity.getName());
             eteEmail.setText(contactEntity.getEmail());
-            etePhone.setText(contactEntity.getJob());
+            etePhone.setText(contactEntity.getPhone());
 
             events();
         }
@@ -218,6 +223,7 @@ public class DetailFragment extends Fragment implements OnCustomDialogListener{
     @Override
     public void onDialogAccepted(Object object) {
         //crud.deleteContact(contactEntity);
+        mhelper.deleteContact(contactEntity);
         mListener.listContacts();
     }
 
