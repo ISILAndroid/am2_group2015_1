@@ -134,11 +134,11 @@ public class ContactFragment extends Fragment {
 		mhelper.addContactData(entity4);
 		mhelper.addContactData(entity5);*/
 
-        //mhelper=new DatabaseHelper(getActivity());
-        //data= mhelper.getContactAll();
+        mhelper=new DatabaseHelper(getActivity());
+        data= mhelper.getContactAll();
 
-        contactRepository= new ContactRepository(getActivity());
-        data= contactRepository.getAll();
+        //contactRepository= new ContactRepository(getActivity());
+        //data= contactRepository.getAll();
 
         ContactAdapter contactAdapter= new ContactAdapter(getActivity(),data);
         lviContact.setAdapter(contactAdapter);
