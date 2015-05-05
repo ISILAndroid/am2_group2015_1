@@ -32,6 +32,7 @@ public class HomeActivity extends ActionBarActivity implements OnFragmentListene
 
     private void gotoHome()
     {
+        //ir a la siguiente pantalla
         startActivity(new Intent(this, NavigationDrawerActivity.class));
     }
 

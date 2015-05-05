@@ -45,19 +45,14 @@ public class NavigationDrawerActivity extends ActionBarActivity implements OnFra
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
-        // set a custom shadow that overlays the main content when the drawer opens
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
-        // set up the drawer's list view with items and click listener
         mDrawerList.setAdapter(new ArrayAdapter<String>(this,
                 R.layout.drawer_list_item, mPlanetTitles));
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
-        // enable ActionBar app icon to behave as action to toggle nav drawer
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        // ActionBarDrawerToggle ties together the the proper interactions
-        // between the sliding drawer and the action bar app icon
         mDrawerToggle = new ActionBarDrawerToggle(
                 this,                  /* host Activity */
                 mDrawerLayout,         /* DrawerLayout object */
@@ -84,24 +79,20 @@ public class NavigationDrawerActivity extends ActionBarActivity implements OnFra
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        //MenuInflater inflater = getMenuInflater();
-        //inflater.inflate(R.menu.menu_main, menu);
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         return super.onCreateOptionsMenu(menu);
     }
 
-    /* Called whenever we call invalidateOptionsMenu() */
     @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        // If the nav drawer is open, hide action items related to the content view
+    public boolean onPrepareOptionsMenu(Menu menu)
+    {
         return super.onPrepareOptionsMenu(menu);
     }
 
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // The action bar home/up action should open or close the drawer.
-        // ActionBarDrawerToggle will take care of this.
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
@@ -121,15 +112,12 @@ public class NavigationDrawerActivity extends ActionBarActivity implements OnFra
         }
     }
 
-    private void selectItem(int position) {
-        // update the main content by replacing fragments
-
-        // update selected item and title, then close the drawer
+    private void selectItem(int position)
+    {
         mDrawerList.setItemChecked(position, true);
         setTitle(mPlanetTitles[position]);
         mDrawerLayout.closeDrawer(mDrawerList);
 
-        //changeFragment(null,myFragment ,"myfragment");
         switch (position)
         {
             case 0:
@@ -150,7 +138,7 @@ public class NavigationDrawerActivity extends ActionBarActivity implements OnFra
 
     private void closeSession()
     {
-        //implementar
+        //cerrar sessión e ir a la pantalla anterior , no usar startActivity
     }
 
     private void changeFragment(Bundle args, Fragment fragment, String tag)
