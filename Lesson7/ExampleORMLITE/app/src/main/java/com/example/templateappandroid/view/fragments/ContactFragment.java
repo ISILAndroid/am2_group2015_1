@@ -15,6 +15,7 @@ import android.widget.ListView;
 
 import com.example.templateappandroid.R;
 import com.example.templateappandroid.model.entity.ContactEntity;
+import com.example.templateappandroid.storage.db.ContactRepository;
 import com.example.templateappandroid.storage.db.DatabaseHelper;
 import com.example.templateappandroid.view.adapters.ContactAdapter;
 import com.example.templateappandroid.view.listeners.OnHomeListener;
@@ -44,6 +45,7 @@ public class ContactFragment extends Fragment {
     private View header;
 
     private DatabaseHelper mhelper;
+    private ContactRepository contactRepository;
 
     /**
      * Use this factory method to create a new instance of
@@ -134,6 +136,9 @@ public class ContactFragment extends Fragment {
 
         mhelper=new DatabaseHelper(getActivity());
         data= mhelper.getContactAll();
+
+        //contactRepository= new ContactRepository(getActivity());
+        //data= contactRepository.getAll();
 
         ContactAdapter contactAdapter= new ContactAdapter(getActivity(),data);
         lviContact.setAdapter(contactAdapter);

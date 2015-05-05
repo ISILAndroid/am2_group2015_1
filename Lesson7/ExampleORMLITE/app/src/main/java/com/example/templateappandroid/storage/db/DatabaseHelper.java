@@ -80,21 +80,12 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 		RuntimeExceptionDao<ContactEntity, String> dao = getSimpleDataContactDao();
 		dao.update(entity);
 	}
-	
-	/*public List<ContactEntity> getContactAll()
-	{
-		DatabaseHelper helper = new DatabaseHelper(_context);
-		RuntimeExceptionDao<ContactEntity, String> simpleDao = helper.getSimpleDataDao();
-		List<QuestionEntity> list = simpleDao.queryForAll();
-		return list;
-	} */
 
  
 	//--------------------------------------------------------------------------------
 	@Override
 	public void close() {
 		super.close();
-		//simpleRuntimeDao = null;
 		simpleRuntimeContactDao =null;
 	}
  
@@ -114,7 +105,6 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	public void onUpgrade(SQLiteDatabase db, ConnectionSource connectionSource, int oldVersion, int newVersion) {
 		try {
 			Log.i(DatabaseHelper.class.getName(), "onUpgrade");
-			//TableUtils.dropTable(connectionSource, QuestionEntity.class, true);
 			TableUtils.dropTable(connectionSource, ContactEntity.class, true);
 			onCreate(db, connectionSource);
 		} catch (SQLException e) {
