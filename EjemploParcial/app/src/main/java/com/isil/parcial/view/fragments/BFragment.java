@@ -3,13 +3,20 @@ package com.isil.parcial.view.fragments;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.isil.parcial.R;
+import com.isil.parcial.model.UserEntity;
+import com.isil.parcial.view.adapter.UserAdapter;
 import com.isil.parcial.view.listener.OnFragmentListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,6 +37,7 @@ public class BFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentListener mListener;
+    private ListView lviUser;
 
     /**
      * Use this factory method to create a new instance of
@@ -93,15 +101,21 @@ public class BFragment extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
 
+        //iniciar listview
+        lviUser= (ListView)getView().findViewById(R.id.lviUser);
+
+        //data
+        /*List<UserEntity> data = new ArrayList<UserEntity>();
+        data.add(new UserEntity("100","Eduardo", "Medina"));*/
+
+        //adapter
+        //UserAdapter adapter = new UserAdapter(getActivity(), R.layout.row_user,data);
+
+        //agregar adapter a listview
+        //lviUser.setAdapter(adapter);
+    }
 }
