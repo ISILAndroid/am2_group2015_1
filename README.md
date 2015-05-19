@@ -2,27 +2,31 @@
 Aplicaciones Móviles 2 - Android ISIL
 
 
-### Conexion Remota
+###Conexion Remota
 
 https://parse.com/
 
 https://www.parse.com/apps
 
 1.Crear nueva aplicación
+
 2. Ir a core
+
 3.Agregar nueva clase "User"
+
 4.Agregar nueva fila
+
 5.Agregar nueva columna
 
 
-### Credenciales
+###Credenciales
 https://www.parse.com/apps/app_am2_isil/edit#keys
 
 
-### Referencia 
+###Referencia 
 https://www.parse.com/docs
 
-### Arquitectura REST&Webservices
+###Arquitectura REST&Webservices
 http://users.dsic.upv.es/~rnavarro/NewWeb/docs/RestVsWebServices.pdf
 
 Postman
