@@ -47,13 +47,10 @@
         android:background="#88000000"
         android:visibility="gone">
 
-
-        <TextView
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF"
-            android:text="Cargando..." />
+            android:layout_gravity="center" />
     </FrameLayout>
 </RelativeLayout>
