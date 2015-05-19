@@ -17,7 +17,7 @@ Entregables del Proyecto
   Aquí necesito el diagrama con todas las tablas , entidades que se va usar en la aplicación.
   Considerar que no se va realizar un base de datos, trabajaremos con data en duro que no se grabará en dispositivo, una lista o un Arraylist.
 
-   ![Modelado BD](https://github.com/ISILAndroid/am2_group2015_1/blob/proyectos/modelado.png)
+   ![Modelado BD](https://github.com/ISILAndroid/am2_group2015_1/blob/proyectos/modelado.jpg)
 
 #### Flujo y vistas de toda la aplicación, por versiones
   Aquí deben entregar todas las vistas de la aplicación presentadas como un flujo, con flechas y en orden. Considerar el versionamiento de sus vistas.
