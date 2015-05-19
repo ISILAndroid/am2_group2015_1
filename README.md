@@ -8,15 +8,15 @@ https://parse.com/
 
 https://www.parse.com/apps
 
-1.Crear nueva aplicación
+1. Crear nueva aplicación
 
 2. Ir a core
 
-3.Agregar nueva clase "User"
+3. Agregar nueva clase "User"
 
-4.Agregar nueva fila
+4. Agregar nueva fila
 
-5.Agregar nueva columna
+5. Agregar nueva columna
 
 
 ###Credenciales
