@@ -15,7 +15,7 @@ Entregables del Proyecto
 
 #### Diagrama de base de datos, por versiones.
   Aquí necesito el diagrama con todas las tablas , entidades que se va usar en la aplicación.
-  Considerar que no se va realizar un base de datos, trabajaremos con data en duro que no se grabará en dispositivo, una lista o un Arraylist.
+  Considerar que se va trabajar con base de datos y conexión remota.
 
    ![Modelado BD](https://github.com/ISILAndroid/am2_group2015_1/blob/proyectos/modelado.jpg)
 
