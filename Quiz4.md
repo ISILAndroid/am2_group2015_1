@@ -4,11 +4,7 @@
 
 
 Realize el siguiente ejercicio:
-Validar el formulario de registro
-
-* Considerar el diseño
-* Utilizar los diferentes eventos para los botones, spinner, radiogroup
-* Realizar las validaciones correspondientes y mostrar mensajes de error
+Conexión remota...
 
 
  * [Github AM2](https://github.com/ISILAndroid/am2_group2015_1)

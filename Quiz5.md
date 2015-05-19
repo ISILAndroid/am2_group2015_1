@@ -4,10 +4,7 @@
 
 
 Realize el siguiente ejercicio:
-Listas y adaptadores...
-
-
-
+Conexión remota...
 
  * [Github AM2](https://github.com/ISILAndroid/am2_group2015_1)
 
