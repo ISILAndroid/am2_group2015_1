@@ -3,10 +3,13 @@ package com.isil.am2.examplerest.view.fragments;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.isil.am2.examplerest.R;
 import com.isil.am2.examplerest.view.listeners.OnFragmentListener;
@@ -29,6 +32,7 @@ public class MainFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentListener mListener;
+    private TextView tviUsername;
 
     /**
      * Use this factory method to create a new instance of
@@ -85,6 +89,15 @@ public class MainFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        tviUsername= (EditText)getView().findViewById(R.id.tviUsername);
+
+        tviUsername.setText("Bienvenido "+"");
     }
 
     /**
