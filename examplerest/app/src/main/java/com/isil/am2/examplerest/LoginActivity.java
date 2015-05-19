@@ -1,5 +1,6 @@
 package com.isil.am2.examplerest;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -90,9 +91,9 @@ public class LoginActivity extends ActionBarActivity {
                             if(loginResponse!=null)
                             {
                                 Log.i(TAG, "loginResponse "+loginResponse.toString());
+
+                                gotoHome();
                             }
-
-
 
                         }catch (Exception e)
                         {
@@ -139,6 +140,12 @@ public class LoginActivity extends ActionBarActivity {
             }
         };
         queue.add(jsonObjReq);
+    }
+
+    private void gotoHome() {
+
+       startActivity(new Intent(this,MainActivity.class));
+       finish();
     }
 
     /*
