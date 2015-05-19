@@ -1,4 +1,4 @@
-# Quiz 1 - Aplicaciones móviles 1
+# Quiz 1 - Aplicaciones móviles 2
 
 ### Instructor : Eduardo José Medina Alfaro isil@qd.pe
 
@@ -38,5 +38,5 @@ Programa un calculadora con las siguientes funcionalidades
 </resources>
 ```
 
- * [Github AM1](https://github.com/ISILAndroid/am1_group2015_1)
+ * [Github AM2](https://github.com/ISILAndroid/am2_group2015_1)
 

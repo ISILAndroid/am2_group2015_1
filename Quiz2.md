@@ -1,4 +1,4 @@
-# Quiz 2 - Aplicaciones móviles 1
+# Quiz 2 - Aplicaciones móviles 2
 
 ### Instructor : Eduardo José Medina Alfaro isil@qd.pe
 
@@ -69,5 +69,5 @@ Hex Opacity Values
 </resources>
 ```
 
- * [Github AM1](https://github.com/ISILAndroid/am1_group2015_1)
+ * [Github AM2](https://github.com/ISILAndroid/am2_group2015_1)
 

@@ -1,4 +1,4 @@
-# Quiz 3 - Aplicaciones móviles 1
+# Quiz 3 - Aplicaciones móviles 3
 
 ### Instructor : Eduardo José Medina Alfaro isil@qd.pe
 
@@ -18,5 +18,5 @@ Revisar un poco de [JAVA](http://code.tutsplus.com/tutorials/learn-java-for-andr
 
  ![Interfaz](https://github.com/ISILAndroid/am1_group2015_1/blob/quizzes/q3_dibujo.png)
 
- * [Github AM1](https://github.com/ISILAndroid/am1_group2015_1)
+ * [Github AM2](https://github.com/ISILAndroid/am2_group2015_1)
 

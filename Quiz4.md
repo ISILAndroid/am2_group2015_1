@@ -1,4 +1,4 @@
-# Quiz 4 - Aplicaciones móviles 1
+# Quiz 4 - Aplicaciones móviles 2
 
 ### Instructor : Eduardo José Medina Alfaro isil@qd.pe
 
@@ -11,5 +11,5 @@ Validar el formulario de registro
 * Realizar las validaciones correspondientes y mostrar mensajes de error
 
 
- * [Github AM1](https://github.com/ISILAndroid/am1_group2015_1)
+ * [Github AM2](https://github.com/ISILAndroid/am2_group2015_1)
 

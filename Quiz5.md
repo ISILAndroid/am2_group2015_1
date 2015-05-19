@@ -1,4 +1,4 @@
-# Quiz 5 - Aplicaciones móviles 1
+# Quiz 5 - Aplicaciones móviles 2
 
 ### Instructor : Eduardo José Medina Alfaro isil@qd.pe
 
@@ -9,5 +9,5 @@ Listas y adaptadores...
 
 
 
- * [Github AM1](https://github.com/ISILAndroid/am1_group2015_1)
+ * [Github AM2](https://github.com/ISILAndroid/am2_group2015_1)
 
