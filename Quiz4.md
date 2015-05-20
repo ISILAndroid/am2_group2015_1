@@ -2,7 +2,8 @@
 
 ### Instructor : Eduardo José Medina Alfaro isil@qd.pe
 
-Temas : Conexión Remota
+Temas : Conexión 
+
 Realize el siguiente ejercicio:
 
 Utilizando el servicio de PARSE  contruya la base de datos de su proyecto.
