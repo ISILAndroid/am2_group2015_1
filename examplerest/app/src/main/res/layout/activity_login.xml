@@ -7,7 +7,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout">
 
         <EditText
             android:layout_width="fill_parent"
@@ -26,16 +27,24 @@
             android:layout_below="@+id/editText"
             android:inputType="textPassword"
             android:hint="Password"
-            android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp"/>
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Enviar"
             android:id="@+id/btnLogin"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:text="Enviar" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrar"
+            android:id="@+id/tviSignIn"
+            android:textSize="18sp"
+            android:autoLink="none"
+            android:layout_below="@+id/linearLayout"
+            android:gravity="center"
+            android:layout_marginTop="58dp" />
 
     </LinearLayout>
 
@@ -53,4 +62,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
     </FrameLayout>
+
+
 </RelativeLayout>

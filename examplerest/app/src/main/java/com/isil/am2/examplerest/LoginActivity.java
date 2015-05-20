@@ -18,7 +18,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.isil.am2.examplerest.model.entity.LoginResponse;
+import com.isil.am2.examplerest.model.entity.response.LoginResponse;
 
 import org.json.JSONObject;
 
@@ -30,7 +30,7 @@ public class LoginActivity extends ActionBarActivity {
 
     private static final String TAG = "HomeActivity";
     private EditText eteUsername,etePassword;
-    private View btnLogin,vLoading;
+    private View btnLogin,vLoading,tviSignIn;
 
     private String username, password;
 
@@ -46,6 +46,7 @@ public class LoginActivity extends ActionBarActivity {
         etePassword = (EditText)findViewById(R.id.etePassword);
         btnLogin = findViewById(R.id.btnLogin);
         vLoading = findViewById(R.id.vLoading);
+        tviSignIn = findViewById(R.id.tviSignIn);
 
         //events
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -60,7 +61,18 @@ public class LoginActivity extends ActionBarActivity {
                 login();
             }
         });
+        tviSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoSignIn();
+            }
+        });
         vLoading.setVisibility(View.GONE);
+    }
+
+    private void gotoSignIn() {
+        startActivity(new Intent(this,SignInActivity.class));
+        //finish();
     }
 
     private void login()

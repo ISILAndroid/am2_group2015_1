@@ -1,4 +1,4 @@
-package com.isil.am2.examplerest.model.entity;
+package com.isil.am2.examplerest.model.entity.response;
 
 import java.io.Serializable;
 
