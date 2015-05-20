@@ -54,11 +54,11 @@ public class LoginActivity extends ActionBarActivity {
             public void onClick(View view) {
 
                //validate
-                username = eteUsername.getText().toString().trim();
-                password = etePassword.getText().toString().trim();
-
-                //ir al servidor
-                login();
+                if(validate())
+                {
+                    //ir al servidor
+                    login();
+                }
             }
         });
         tviSignIn.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +68,26 @@ public class LoginActivity extends ActionBarActivity {
             }
         });
         vLoading.setVisibility(View.GONE);
+    }
+
+    private boolean validate() {
+
+        username = eteUsername.getText().toString().trim();
+        password = etePassword.getText().toString().trim();
+
+        eteUsername.setError(null);
+        etePassword.setError(null);
+        if(username.isEmpty())
+        {
+            eteUsername.setError("Ingresar este campo");
+            return false;
+        }
+        if(password.isEmpty())
+        {
+            etePassword.setError("Ingresar este campo");
+            return false;
+        }
+        return true;
     }
 
     private void gotoSignIn() {
