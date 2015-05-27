@@ -1,5 +1,6 @@
 package com.isil.am2.examplerest;
 
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 
+import com.isil.am2.examplerest.view.fragments.DetalleMascotaFragment;
 import com.isil.am2.examplerest.view.fragments.MainFragment;
 import com.isil.am2.examplerest.view.fragments.MascotaFragment;
 import com.isil.am2.examplerest.view.listeners.OnFragmentListener;
@@ -18,8 +20,12 @@ import com.isil.am2.examplerest.view.listeners.OnFragmentListener;
 
 public class MainActivity extends ActionBarActivity implements OnFragmentListener{
 
+    public final static String FMASCOTA="MASCOTA";
+    public final static String FDETMASCOTA="DETMASCOTA";
+
     private MainFragment mainFragment= MainFragment.newInstance(null,null);
     private MascotaFragment mascotaFragment= MascotaFragment.newInstance(null,null);
+    private DetalleMascotaFragment detalleMascotaFragment= DetalleMascotaFragment.newInstance(null,null);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +58,23 @@ public class MainActivity extends ActionBarActivity implements OnFragmentListene
 
     @Override
     public void changeFragment(Bundle bundle, String fragName, String fragBack) {
+        Fragment fragment= factoryFragment(fragName);
 
+        if (bundle != null) fragment.setArguments(bundle);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.container, fragment, fragName).addToBackStack(fragBack).commit();
+    }
+
+    private Fragment factoryFragment(String fragName) {
+
+        if(fragName.equals("MASCOTA"))
+        {
+            return mascotaFragment;
+        }else if(fragName.equals("DETMASCOTA"))
+        {
+            return detalleMascotaFragment;
+        }
+        return null;
     }
 
     /**

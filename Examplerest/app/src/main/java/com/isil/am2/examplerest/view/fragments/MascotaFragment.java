@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.android.volley.AuthFailureError;
@@ -19,6 +20,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.isil.am2.examplerest.MainActivity;
 import com.isil.am2.examplerest.R;
 import com.isil.am2.examplerest.model.entity.MascotaEntity;
 import com.isil.am2.examplerest.view.adapter.MascotaAdapter;
@@ -139,6 +141,16 @@ public class MascotaFragment extends Fragment {
 
 
         loadData();
+        lviMascotas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                MascotaEntity mascotaEntity= (MascotaEntity)adapterView.getAdapter().getItem(i);
+                Bundle bundle =new Bundle();
+                bundle.putSerializable("ENTITY",mascotaEntity);
+                mListener.changeFragment(bundle, MainActivity.FDETMASCOTA,
+                        MainActivity.FMASCOTA);
+            }
+        });
     }
 
     private void loadData() {
@@ -211,6 +223,7 @@ public class MascotaFragment extends Fragment {
         MascotaAdapter adapter= new MascotaAdapter(getActivity(),R.layout.row_mascota,data);
 
         lviMascotas.setAdapter(adapter);
+
     }
 
     private class MascotaResponse implements Serializable
