@@ -1,6 +1,7 @@
 package com.isil.am2.exampledatosabiertos.view.adapter;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,9 +52,11 @@ public class SitioARQAdapter extends ArrayAdapter<SitioARQEntity> {
             if(position==0)
             {
                 holder.tviIdentificador.setText("ID");
+                holder.tviIdentificador.setTypeface(Typeface.DEFAULT_BOLD);
             }else
             {
                 holder.tviIdentificador.setText(entry.getIdentificador());
+                holder.tviIdentificador.setTypeface(Typeface.DEFAULT);
             }
         }
 
