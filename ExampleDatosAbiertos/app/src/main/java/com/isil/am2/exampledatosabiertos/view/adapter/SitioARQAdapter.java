@@ -53,10 +53,14 @@ public class SitioARQAdapter extends ArrayAdapter<SitioARQEntity> {
             {
                 holder.tviIdentificador.setText("ID");
                 holder.tviIdentificador.setTypeface(Typeface.DEFAULT_BOLD);
+                holder.tviDistrito.setTypeface(Typeface.DEFAULT_BOLD);
+                holder.tviNombre.setTypeface(Typeface.DEFAULT_BOLD);
             }else
             {
                 holder.tviIdentificador.setText(entry.getIdentificador());
                 holder.tviIdentificador.setTypeface(Typeface.DEFAULT);
+                holder.tviDistrito.setTypeface(Typeface.DEFAULT);
+                holder.tviNombre.setTypeface(Typeface.DEFAULT);
             }
         }
 
