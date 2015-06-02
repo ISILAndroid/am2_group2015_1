@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ExampleDatosAbiertos</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">ExampleDatosAbiertos</string>
+    <string name="title_activity_home">ExampleDatosAbiertos</string>
+    <string name="title_activity_main">ExampleDatosAbiertos</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_sign_in">ExampleDatosAbiertos</string>
+
+</resources>
