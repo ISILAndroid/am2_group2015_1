@@ -16,6 +16,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.isil.am2.examplerest.R;
 import com.isil.am2.examplerest.model.entity.response.LoginResponse;
+import com.isil.am2.examplerest.model.entity.response.MyResponse;
 import com.isil.am2.examplerest.view.listeners.OnFragmentListener;
 
 import com.android.volley.AuthFailureError;
@@ -148,15 +149,11 @@ public class MainFragment extends Fragment {
                         Log.i(TAG, response.toString());
                         GsonBuilder builder = new GsonBuilder();
                         Gson gson = builder.create();
-                        /*
-                        {"results":[{"createdAt":"2015-05-27T00:26:37.271Z","detalle":"Perro extraviado en el parque.","distrito":"San Isidro","estado":true,"fec_encontrado":"","fec_extravio":"24\/01\/2015","id_user":"JOFcaW5OOz","name":"Fido","objectId":"sZXoKAwyxI","updatedAt":"2015-05-27T00:28:12.278Z"},
-                        {"createdAt":"2015-05-27T00:28:24.895Z","detalle":"Perro Robado en la puerta de su casa.","distrito":"Surco","estado":true,"fec_extravio":"10\/03\/2015","id_user":"S85qqjR3fc","name":"Ruffo","objectId":"j7jk18Jvfu","updatedAt":"2015-05-27T00:29:15.858Z"}]}
-                         */
-                        /*MascotaResponse objects = gson.fromJson(response.toString(), MascotaResponse.class);
+                        MyResponse myResponse = gson.fromJson(response.toString(), MyResponse.class);
 
-                        data= objects.getResults();
-                        populateMascota();*/
-
+                        //data= objects.getResults();
+                        //populateMascota();
+                        Log.v(TAG, "myResponse "+myResponse.toString());
                         vLoading.setVisibility(View.GONE);
 
                     }
