@@ -42,12 +42,19 @@ public class SitioARQAdapter extends ArrayAdapter<SitioARQEntity> {
         SitioARQEntity entry = data.get(position);
         if(entry != null)
         {
-            //Bitmap bm= BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_pet);
             ViewHolder holder = (ViewHolder)v.getTag();
-            holder.tviIdentificador.setText(entry.getIdentificador());
+            //holder.tviIdentificador.setText(entry.getIdentificador());
             holder.tviNombre.setText(entry.getNombre());
             holder.tviDistrito.setText(entry.getDistrito());
            // holder.iviMascota.setImageBitmap(aux);
+
+            if(position==0)
+            {
+                holder.tviIdentificador.setText("ID");
+            }else
+            {
+                holder.tviIdentificador.setText(entry.getIdentificador());
+            }
         }
 
 

@@ -137,7 +137,7 @@ public class MainFragment extends Fragment {
         //String url= "http://api.lima.datosabiertos.pe/datastreams/invoke/SITIO-ARQUE-DE-LIMA?auth_key=e053821c67a9d867390ef71d93d22cd9e6ae556f&output=json_array";
         //http://api.lima.datosabiertos.pe/datastreams/invoke/BASE-DE-DATOS-DE-SITIO?auth_key=e053821c67a9d867390ef71d93d22cd9e6ae556f&output=json_array&limit=100
 
-        String url = getString(R.string.url_datos_abiertos)+getString(R.string.guid1)+"?auth_key="+getString(R.string.key)+"&"+"output="+getString(R.string.output)+"&+limit="+100;
+        String url = getString(R.string.url_datos_abiertos)+getString(R.string.guid1)+"?auth_key="+getString(R.string.key)+"&"+"output="+getString(R.string.output)+"&limit="+100;
 
         Log.v(TAG, " url "+url);
 
