@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AM2Lesson11</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="gmp_key">AIzaSyApczteSomyH6SzjWQtvx7w_ctlBMwSdZo</string>
+</resources>
