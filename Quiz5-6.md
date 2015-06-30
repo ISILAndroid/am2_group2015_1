@@ -4,12 +4,12 @@
 
 
 Integrar Google Maps en su proyecto
-- Mostrar el mapa.
-- Mostrar algunos marcadores
+- Mostrar el mapa en Fragment o Actividad.
+- Mostrar algunos marcadores en el mapa.
 - Algunos ejemplos
 	- Ubicación de mascota.
 	- Mostrar historias en un mapa.
-	- Cines mas cercanos.
+	- Cines más cercanos.
 	- Locallización de Sedes.
 	- Localización de restaurantes.
 

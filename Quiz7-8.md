@@ -2,8 +2,7 @@
 
 ### Instructor : Eduardo José Medina Alfaro isil@qd.pe
 
-
-Integrar en su proyectos la herramienta PARSE
+Integrar en sus proyectos la herramienta PARSE
 - Permita Loguear o Registrar
 - Permita Listar datos
 - Permita editar/eliminar
