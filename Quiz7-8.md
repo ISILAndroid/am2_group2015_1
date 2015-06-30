@@ -9,6 +9,8 @@ Integrar en su proyectos la herramienta PARSE
 - Permita editar/eliminar
 - Utilizar el API REST de Parse
 
- * [Github AM2](https://github.com/ISILAndroid/am2_group2015_1)
- * [Quizzes](https://github.com/ISILAndroid/am2_group2015_1/tree/quizzes)
+### Referencias
+
+* [Github AM2](https://github.com/ISILAndroid/am2_group2015_1)
+* [Quizzes](https://github.com/ISILAndroid/am2_group2015_1/tree/quizzes)
 

@@ -13,7 +13,9 @@ Integrar Google Maps en su proyecto
 	- Locallización de Sedes.
 	- Localización de restaurantes.
 
- * [Github AM2](https://github.com/ISILAndroid/am2_group2015_1)
- * [Quizzes](https://github.com/ISILAndroid/am2_group2015_1/tree/quizzes)
+### Referencias
+
+* [Github AM2](https://github.com/ISILAndroid/am2_group2015_1)
+* [Quizzes](https://github.com/ISILAndroid/am2_group2015_1/tree/quizzes)
 
 
